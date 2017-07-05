@@ -2,7 +2,7 @@
 rm(list=ls(all = TRUE))
 
 #set current working directory
-setwd("D:/rakesh/data science/Major Project")
+setwd("D:/rakesh/data science/Project/Interest rate/Major Project")
 
 #load data into R
 data = read.csv("Data for Cleaning & Modeling.csv", header = T)
@@ -11,21 +11,24 @@ data = read.csv("Data for Cleaning & Modeling.csv", header = T)
 str(data)
 summary(data)
 
-
-data$X1 = gsub("%"," ",data$X1)
-data$X30 = gsub("%"," ",data$X30)
+#Removing the percentage
+data$X1 = gsub("%","",data$X1)
+data$X30 = gsub("%","",data$X30)
 
 
 #Replacing missing values with NA
 data = data.frame(apply(data, 2, function(x) gsub("^$|^ $", NA, x)))
+
+#Total missing values in data
 sum(is.na(data))
 
-#Store Values in data frame
+#Data frame of count of missing values for each column
 MissingData = data.frame(varaibles = colnames(data), 
                          MissingInfo = apply(data,2,function(x)sum(is.na(x))))
 
 
-#converting Variables,
+#converting Variables to their respective class
+#First converting to character as its not conerting directly
 
 for (i in c(1:6,10,13,16,18,22:31)){
   data[,i] = as.character(data[,i])
