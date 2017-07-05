@@ -1,9 +1,6 @@
 #remove all objects from R
 rm(list=ls(all = TRUE))
 
-#set current working directory
-setwd("D:/rakesh/data science/Project/Interest rate/Major Project")
-
 #load data into R
 data = read.csv("Data for Cleaning & Modeling.csv", header = T)
 
@@ -28,7 +25,7 @@ MissingData = data.frame(varaibles = colnames(data),
 
 
 #converting Variables to their respective class
-#First converting to character as its not conerting directly
+#First converting to character as its not converting directly
 
 for (i in c(1:6,10,13,16,18,22:31)){
   data[,i] = as.character(data[,i])
