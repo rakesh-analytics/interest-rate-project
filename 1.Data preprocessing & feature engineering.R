@@ -91,5 +91,3 @@ vifcor(data[,c(1,4:6,13,21,22,24,27,28:31,33)], th=0.5)
 #So they are not fed to the model.
 
 save.image("process")
-load("process")
-
