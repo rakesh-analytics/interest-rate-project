@@ -86,14 +86,11 @@ vifcor(data[,c(1,4:6,13,21,22,24,27,28:31,33)], th=0.9)
 
 
 save.image("process")
+
+
 load("process")
 
-
-
-#Removing unnecessary variables
-#data = subset(data, select = -c(X2,X3,X19,X25,X26))
-
-
+#Load libraries to draw plots
 library('ggplot2')
 library('ggthemes')
 library(gridExtra)
