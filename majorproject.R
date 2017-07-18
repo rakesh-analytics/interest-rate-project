@@ -182,7 +182,7 @@ ggplot(aes(x=X13,y=X1),data = data) +
   scale_color_brewer(type = 'div')+
   ggtitle('Annual Income and Interest Rate Relationship')
 
-
+#Observations
 table(data$Annual_income) #Income Groups
 49501/208306*100  #Percentage of High Income Group
 52785/208306*100  #Percentage of Low Income Group
