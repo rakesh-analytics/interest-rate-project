@@ -1,4 +1,3 @@
-
 load("process")
 
 #Loading libraries to draw plots
@@ -93,3 +92,18 @@ ggplot(aes(x=X13,y=X1),data = data) +
   scale_color_brewer(type = 'div')+
   ggtitle('Annual Income and Interest Rate Relationship')
 
+table(data$Annual_income) #Income Groups
+49501/208306*100  #Percentage of High Income Group
+52785/208306*100  #Percentage of Low Income Group
+106020/208306*100  #Percentage of Middle Income Group
+
+
+table(data$X14)
+table(data$X14,data$Interest_rate)
+3887/70904*100  #Percentage of Non Verified Income having High Interest
+14131/74315*100 #Percentage of Verified Income having High Interest
+8221/63087*100  #Percentage of Verified Income Source having High Interest
+
+31216/70904*100  #Percentage of Non Verified Income having Low Interest
+17281/74315*100 #Percentage of Verified Income having Low Interest
+18816/63087*100  #Percentage of Verified Income Source having Low Interest
